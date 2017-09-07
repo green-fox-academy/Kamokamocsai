@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 1em;
+    border: 0px;
+    padding: 0px;
+    color: #fff;
+    font-size: 18px;
+}
+
+p {
+    display: inline-block;
+    padding: 3em;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    /* height: 30px; */
+    background-color: turquoise;
+    text-align: center;
+    
+}
+
+p:first-of-type {
+    background: #B90CEB;
+}
+
+p:last-of-type {
+    background: #EBBE0C;
+}
+
