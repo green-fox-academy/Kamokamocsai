@@ -1,0 +1,11 @@
+div {
+   border: 5px solid #7DCE94; 
+   font-size: 35px;
+   padding: 20px 15px 20px 15px;
+   width: 350px;
+   height: 110px;
+   background: #0E91A1; 
+   /* a font color csak ennyi: */
+   color: #065666;
+   margin: 17px;
+}
