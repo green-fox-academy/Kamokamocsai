@@ -1,0 +1,39 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#out div {
+    font-size: 36px;
+    color: #ffffff;
+    height: 130px;
+    padding-top: 45px;
+    text-align: center;
+}
+
+
+
+#out {
+    border: 15px solid #4285F4;
+    width: 350px;
+}
+
+#north {
+    
+    background: #E67676;
+}
+
+#east {
+    background: #F2F062;
+}
+
+#south {
+    background: #A9E6E6;
+}
+
+#west {
+    background: #7692E4;
+}
