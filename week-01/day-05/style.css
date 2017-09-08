@@ -1,0 +1,40 @@
+html {
+    background-color: #DCD6CD;
+    margin: 0px;
+    padding: 0px;
+}
+
+#bigbox {
+    display: border-box;
+    background: #127731;
+    width: 820px;
+    height: 1000px;
+    margin: 2% auto;
+}
+
+.box {
+    background-color: #FFE42E;
+    display: inline-block;
+    width: 96.4%;
+    height: 45px;
+    margin-top: 2%;
+    border: 15px solid red;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#left-box {
+    width: 46.3425%;
+    padding: 0px;
+    height: 530px;
+}
+
+#right-box {
+    width: 46.3425%;
+    margin: 2% 0 0 -4px;
+    height: 530px;
+}
+
+#bottom-box {
+    height: 185px;
+}
