@@ -3,3 +3,13 @@
 # 
 # Surface Area: 600
 # Volume: 1000
+
+a = 10
+b = 5
+c = 8
+
+surface = 2 * (a * b + b * c + a * c)
+volume = a * b * c
+
+print("Surface Area: " + str(surface))
+print("Volume: " + str(volume))
