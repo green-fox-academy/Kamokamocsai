@@ -8,3 +8,10 @@
 #  John Doe
 #  31
 #  1.87
+name = "Andras Kamocsai"
+age = "34"
+heights = 1.72
+
+print(name)
+print(age)
+print(heights)
