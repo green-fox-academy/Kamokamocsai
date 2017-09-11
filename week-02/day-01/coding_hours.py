@@ -7,3 +7,6 @@
 # Print the percentage of the coding hours in the semester if the average
 # work hours weekly is 52
 
+codeHours = 6
+semesterLong = 17
+print(int(5*codeHours*semesterLong))
