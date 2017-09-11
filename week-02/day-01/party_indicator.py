@@ -25,9 +25,9 @@ if girls != boys and girls + boys > 20:
 # if girls == 0:
 if girls == 0:
     print("Sausage party")
-
 elif girls + boys < 20:
     print("Average party...")
 
 # It should print: Sausage party
 # If no girls are coming, regardless the count of the people
+
