@@ -6,4 +6,4 @@
 chicken = int(input("How many chickens you have? "))
 pig = int(input("How many pigs you have?"))
 
-print(int((chicken*2) + (pig*4)))
+print((chicken*2) + (pig*4))
