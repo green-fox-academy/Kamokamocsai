@@ -9,4 +9,6 @@
 
 codeHours = 6
 semesterLong = 17
-print(int(5*codeHours*semesterLong))
+print(5*codeHours*semesterLong)
+averageHours = 52
+print((semesterLong / averageHours)*100)
