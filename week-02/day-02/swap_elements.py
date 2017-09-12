@@ -6,5 +6,5 @@ abc = ["first", "second", "third"]
 
 def swapper(elements):
     elements[0], elements[2] = elements[2], elements[0]
-
+    return elements
 print(swapper(abc))
