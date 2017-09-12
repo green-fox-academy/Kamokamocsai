@@ -4,10 +4,9 @@
 # - Greet `al`
 
 al = "Greenfox"
-el = "asd"
+
 def greet(name):
     print("Greetings, dear " + name)
     return
 
 greet(al)
-greet(el)
