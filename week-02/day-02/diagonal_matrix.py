@@ -10,14 +10,25 @@
 
 matrix = [1, 0, 0, 0]
 
-def matrix_list(num_list):
-    while i is not (4):
-    for i in range(matrix):
-        print(matrix)
-        matrix[i] = matrix[6]
-        matrix[i+1] = matrix[i]
-        matrix[6] = matrix[i]
-        i = i + 1
-    return num_list
+line = ""
+for i in range(0,4):
+    line=""
+    for j in range(0,4):
+        if i == j:
+            line += "1"
+        else:
+             line +="0"
+        line+=" "
+    print(line)
 
-matrix_list(matrix)
+# def matrix_list(num_list):
+#     while i is not (4):
+#     for i in range(matrix):
+#         print(matrix)
+#         matrix[i] = matrix[6]
+#         matrix[i+1] = matrix[i]
+#         matrix[6] = matrix[i]
+#         i = i + 1
+#     return num_list
+
+# matrix_list(matrix)
