@@ -10,3 +10,6 @@ def animals(list_of_animals):
     return list_of_animals
 
 print(animals(nimals))
+
+# Legegyszerűbben:
+
