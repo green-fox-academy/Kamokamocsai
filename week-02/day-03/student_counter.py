@@ -21,3 +21,12 @@ def all_candies(list_of_students):
 
 all_candies(students)
 
+
+def all_ages(list_of_students):
+    ages = 0
+    for student in list_of_students:
+        if student['candies'] < 5:
+            ages += student['age']
+    print(ages)
+
+all_ages(students)
