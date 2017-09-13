@@ -14,11 +14,11 @@ accounts = [
 	{ 'client_name': 'Sergei', 'account_number': 23456311, 'balance': 1353600.0 }
 ]
 
-print(accounts[0]['client_name'] + " : " + str(accounts[0]['balance']))
+# print(accounts[0]['client_name'] + " : " + str(accounts[0]['balance']))
 
 
-# def name_balance(acc):
-#     for client in acc:
-#         print(acc['client_name', 'balance'])
+def name_balance(acc):
+    for client in acc:
+        print(client['client_name'] + ": " + str(client['balance']))
 
-# name_balance(accounts)
+name_balance(accounts)
