@@ -25,7 +25,7 @@ queue = [
 
 
 
-def security_check(queue):
+def security_check():
     for member in queue:
         if member['guns'] > 0:
             watchlist.append(member['name'])
@@ -35,10 +35,15 @@ def security_check(queue):
             if member['alcohol'] > 0:
                 member['alcohol'] = 0
 
+def remover():
+    for person in watchlist:
+        for queue_member in queue:
+            if queue_member['name'] == person:
+                queue.remove(queue_member)
 
+security_check()
 
-    print(queue)
+remover()
 
-security_check(queue)
-
+print(queue)
 print(watchlist)
