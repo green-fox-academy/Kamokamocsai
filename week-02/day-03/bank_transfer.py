@@ -17,8 +17,12 @@ accounts = [
 # print(accounts[0]['client_name'] + " : " + str(accounts[0]['balance']))
 
 
-def name_balance(acc):
-    for client in acc:
-        print(client['client_name'] + ": " + str(client['balance']))
+def name_balance(user_input):
+    if user_input in accounts:
+        client = user_input
+        for client in accounts:
+            print(client['client_name'] + ": " + str(client['balance']))
 
-name_balance(accounts)
+user_input = input("adja meg : ")
+
+name_balance(user_input)
