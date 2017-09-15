@@ -13,8 +13,8 @@ def guessed(user_guess):
         elif user_guess > random_number:
             user_life = user_life - 1                    
             print("Too high! You have " + str(user_life) + " lives left.")
-        elif user_guess < random_number:
-            # user_life -= 1
+        else:
+            user_life -= 1
             print("Too low! You have " + str(user_life) + " lives left.")
         
 guessed(user_guess)
