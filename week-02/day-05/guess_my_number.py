@@ -17,5 +17,4 @@ def guessed(user_guess):
             # user_life -= 1
             print("Too low! You have " + str(user_life) + " lives left.")
         
-
 guessed(user_guess)
