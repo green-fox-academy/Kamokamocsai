@@ -6,8 +6,8 @@
 user_name = input("What\'s your name? ")
 
 try:
-    text_file = open('my-file.txt', 'a')
-    text_file.append(user_name)
+    text_file = open('my-file.txt', 'r')
+    text_file.write(user_name)
     text_file.close()
 except:
     print("Unable to write file: my-file.txt")
