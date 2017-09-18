@@ -11,7 +11,7 @@ def guessed(user_guess):
         if user_guess == random_number:
             print("Congratulations! You won!")
         elif user_guess > random_number:
-            user_life = user_life - 1                    
+            user_life -= 1                    
             print("Too high! You have " + str(user_life) + " lives left.")
         else:
             user_life -= 1

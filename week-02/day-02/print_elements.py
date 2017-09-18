@@ -5,8 +5,8 @@
 af = [4, 5, 6, 7]
 
 def af_elements(numbers):
-    for i in range(af[0:-1]):
-        i = i + 1
+    for i in range(len(af[0:])):
         print(af[i])
+        i = i + 1
     return
 af_elements(af)

@@ -5,8 +5,11 @@
 
 aj = [3, 4, 5, 6, 7]
 
-def revers(list_of_nums):
-    list_of_nums.reverse()
-    return list_of_nums
+# def revers(list_of_nums):
+#     list_of_nums.reverse()
+#     return list_of_nums
 
-print(revers(aj))
+# print(revers(aj))
+
+aj.reverse()
+print(aj)
