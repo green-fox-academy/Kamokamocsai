@@ -15,7 +15,7 @@ def draw_checkerboard():
     for row in range(6):             
         for column in range(6):           
             # if (row + column) % 2 == 0:     
-            canvas.create_rectangle(column * 60, row, column + 60, row + 60)
+            canvas.create_rectangle(column * 60, row*60, column*60 + 60, row*60 + 60)
                 # color = 'white'
             # else:
             #     pass
