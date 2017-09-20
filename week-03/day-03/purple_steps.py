@@ -7,8 +7,13 @@ canvas.pack()
 
 
 def draw_square(square_size):
-    canvas.create_rectangle(0 + square_size, 0 + square_size, square_size, square_size, fill='red')
-    
+    x_pos = 0
+    y_pos = 0
+    while x_pos <= 300:
+        canvas.create_rectangle(x_pos + square_size, y_pos + square_size , x_pos + square_size * 2, y_pos + square_size * 2, fill='red')
+        x_pos += square_size
+        y_pos += square_size
+
 draw_square(10)
 
 
