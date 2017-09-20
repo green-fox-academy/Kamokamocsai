@@ -12,15 +12,14 @@ canvas.pack()
 
 
 def draw_square(square_size, color):
-    canvas.create_rectangle(150 - square_size, 150 - square_size, 150 + square_size, 150 + square_size, fill=color)
+    canvas.create_rectangle(150 + square_size, 150 + square_size, 150 - square_size, 150 - square_size, fill=color)
     
 draw_square(150, 'red')
-draw_square(125, 'orange')
-draw_square(105, 'yellow')
-draw_square(84, 'green')
+draw_square(128, 'orange')
+draw_square(107, 'yellow')
+draw_square(85, 'green')
 draw_square(63, 'blue')
 draw_square(42, 'indigo')
 draw_square(21, 'violet')
-
 
 root.mainloop()
