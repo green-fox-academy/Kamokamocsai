@@ -7,23 +7,13 @@ canvas.pack()
 
 # fill the canvas with a checkerboard pattern.
 
-# offset_x = 10      
-# offset_y = 10      
-# cell_size = 10     
+cell_size = 300 / 7
 
 def draw_checkerboard():
-    for row in range(6):             
-        for column in range(6):           
-            # if (row + column) % 2 == 0:     
-            canvas.create_rectangle(column * 60, row*60, column*60 + 60, row*60 + 60)
-                # color = 'white'
-            # else:
-            #     pass
-                # color = 'black'
-            # canvas.setFill(color)
-            # canvas.drawRect(offset_x + row * cell_size, offset_y + column * cell_size, cell_size, cell_size)
-
-
+    for row in range(8):             
+        for column in range(8):           
+            if (row + column) % 2 == 0:     
+                canvas.create_rectangle(column * cell_size, row * cell_size, column * cell_size + cell_size, row * cell_size + cell_size, fill='black')
 
 draw_checkerboard()
 
