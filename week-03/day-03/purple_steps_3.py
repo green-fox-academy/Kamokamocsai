@@ -13,7 +13,7 @@ def draw_square(square_size):
         canvas.create_rectangle(x_pos + square_size, y_pos + square_size , x_pos + square_size * 2, y_pos + square_size * 2, fill='purple')
         x_pos += square_size / 100
         y_pos += square_size / 100
-        square_size *= 2
+        square_size += square_size
 
 draw_square(10)
 
