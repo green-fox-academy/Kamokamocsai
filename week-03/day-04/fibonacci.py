@@ -4,3 +4,13 @@
 # previous two values, so the whole sequence is: 0, 1, 1, 2, 3, 5, 8, 13, 21
 # and so on. Define a recursive fibonacci(n) method that returns the nth
 # fibonacci number, with n=0 representing the start of the sequence.
+
+def fibonacci(number):
+    if number <= 0:
+        return 0
+    elif number == 1:
+        return 1
+    else:
+        return fibonacci(number-1) + fibonacci(number-2)
+
+print(fibonacci(7))

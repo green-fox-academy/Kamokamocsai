@@ -7,7 +7,7 @@ canvas.pack()
 
 # fill the canvas with a checkerboard pattern.
 
-cell_size = 300 / 7
+cell_size = 300 / 8
 
 def draw_checkerboard():
     for row in range(8):             
