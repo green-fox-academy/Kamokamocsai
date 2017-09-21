@@ -6,7 +6,7 @@
 def bunny_ears_counter(number):
     odd_bunny_ears = 2
     even_bunny_ears = 3
-    if number == 0:
+    if number == 1:
         return number
     elif number % 2 == 0:
         return even_bunny_ears + bunny_ears_counter(number - 1)
@@ -14,4 +14,4 @@ def bunny_ears_counter(number):
         return even_bunny_ears + bunny_ears_counter(number - 1)
 
 
-print(bunny_ears_counter(4))
+print(bunny_ears_counter(5))
