@@ -8,5 +8,5 @@ def number_adder(number):
     else:
         return number % 10 + number_adder(number // 10)
 
-sum_total = number_adder(434)
-print(sum_total)
+
+print(number_adder(434))
