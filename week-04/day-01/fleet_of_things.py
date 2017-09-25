@@ -13,10 +13,10 @@ fleet.add(thing1)
 thing2 = Thing("Remove the obstacles")
 fleet.add(thing2)
 thing3 = Thing("Stand up")
-
+thing3.complete()
 fleet.add(thing3)
 thing4 = Thing("Eat lunch")
-
+thing4.complete()
 fleet.add(thing4)
 
 
