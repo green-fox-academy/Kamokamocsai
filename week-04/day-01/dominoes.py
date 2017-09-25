@@ -15,14 +15,12 @@ dominoes = initialize_dominoes()
 # Order them into one snake where the adjacent dominoes have the same numbers on their adjacent sides
 # eg: [2, 4], [4, 3], [3, 5] ...
 
-class orders_of_dominoes(object):
-    def __init__(self, value_one, value_two):
-        for i in range(len(dominoes)):
-            for j in range(len(dominoes)):
-                print(i)
-                print(j)
-                # if i.values[1] == j.values[0]:
-                #     dominoes.append(i)
-        
+def domino_sorter(dominoes):
+    solution = []
+    for one_domino in range(len(dominoes)):
+        if dominoes[one_domino].values[1] == dominoes[one_domino].values[0]:
+            solution.append(dominoes[one_domino])
+            print(solution)
 
-print(dominoes.orders_of_dominoes)
+domino_sorter(dominoes)
+# print(domino_sorter(dominoes))
