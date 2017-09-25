@@ -9,7 +9,15 @@ fleet = Fleet()
 # 4. [x] Eat lunch
 
 thing1 = Thing("Get milk")
-print(thing1)
+fleet.add(thing1)
+thing2 = Thing("Remove the obstacles")
+fleet.add(thing2)
+thing3 = Thing("Stand up")
+
+fleet.add(thing3)
+thing4 = Thing("Eat lunch")
+
+fleet.add(thing4)
 
 
 print(fleet)
