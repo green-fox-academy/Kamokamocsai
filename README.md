@@ -1,4 +1,5 @@
 Hello World!
 ![alt text][logo]
 
-[logo]: https://d302e0npexowb4.cloudfront.net/wp-content/uploads/2017/01/FCB-logo-3.png "FCBarcelona"
+[logo]: https://avatars3.githubusercontent.com/u/29578618?v=4&s=460
+"Kamo"
