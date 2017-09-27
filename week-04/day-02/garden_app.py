@@ -1,77 +1,38 @@
+from tree_and_flower import Tree, Flower
+
 class Garden(object):
     def __init__(self):
-        self.flowers = []
-        self.trees = []
-        
+        self.plants = []
 
-    def add_flower(self, flower):
-        self.flowers.append(flower)
-        print("The {} flower {}".format(flower.color, flower.status()))
+    def add_plant(self, plant):
+        self.plants.append(plant)
 
-    def add_tree(self, tree):
-        self.trees.append(tree)
-        print("The {} tree {}".format(tree.color, tree.status()))
+    def watering(self, amount):
+        print("\nWatering with " + str(amount))
+        needs_water = self.get_thirsty_plant_indicates()
+        amount_to_a_plant = amount / len(needs_water)
+        for i in needs_water:
+            self.plants[i].watering(amount_to_a_plant)
+        self.status()
 
-    def add_water(self, amount):
-        self.water_needs = []
-        for i in self.flowers:
-            if i.status() == "Needs water!":
-                self.water_needs.append(i)
-        for i in self.trees:
-            if i.status() == "Needs water!":
-                self.water_needs.append(i)
-        for i in self.water_needs:
-            i.get_water(amount / len(self.water_needs()))        
-
-    def preview(self):
-        for i in self.flowers:
-            print("The {} flower {}".format(i.color, i.status()))
-
-
-
-class Flower(object):
-    def __init__(self, color):
-        self.color = color
-        self.water_amount = 0
-        # print("The {} flower {}".format(self.color, self.status()))
+    def get_thirsty_plant_indicates(self):
+        thirsty_plant_indicates = []
+        for i in range(len(self.plants)):
+            if self.plants[i].is_need_water():
+                thirsty_plant_indicates.append(i)
+        return thirsty_plant_indicates
 
     def status(self):
-        if self.water_amount < 5:
-            return "needs water!"
-        else:
-            return "doesn't needs water!"
+        for plant in self.plants:
+            plant.status()
 
+my_garden = Garden()
+# my_tree = Tree("red")
+my_garden.add_plant(Flower("yellow"))
+my_garden.add_plant(Flower("blue"))
+my_garden.add_plant(Tree("purple"))
+my_garden.add_plant(Tree("orange"))
 
-    def get_water(self, amount):
-        self.water_amount += amount * 0.75
-
-    
-
-class Tree(object):
-    def __init__(self, color):
-        self.color = color
-        self.water_amount = 0
-        # print("The {} tree {}".format(self.color, self.status()))
-
-    def status(self):
-        if self.water_amount < 10:
-            return "needs water!"
-        else:
-            return "doesn't needs water!"
-
-
-    def get_water(self, amount):
-        self.water_amount += amount * 0.4
-
-
-flower1 = Flower("yellow")
-flower2 = Flower("blue")
-tree1 = Tree("purple")
-tree2 = Tree("orange")
-Garden().add_flower(flower1)
-Garden().add_flower(flower2)
-Garden().add_tree(tree1)
-Garden().add_tree(tree2)
-
-Garden().add_water(40)
-
+print(my_garden.status())
+my_garden.watering(40)
+my_garden.watering(70)
