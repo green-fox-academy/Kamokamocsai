@@ -6,10 +6,10 @@ test_apple = Apple()
 class GetAppleTest(unittest.TestCase):
 
     def test_get_apple(self):        
-        self.assertEqual(test_apple.get_apple(), "apple")
+        self.assertEqual(test_apple.get_apple("apple"), "apple")
 
     def test_get_apple(self):        
-        self.assertEqual(test_apple.get_apple(), "bananas")
+        self.assertEqual(test_apple.get_apple("bananas"), "bananas")
 
 
 if __name__ == '__main__':
