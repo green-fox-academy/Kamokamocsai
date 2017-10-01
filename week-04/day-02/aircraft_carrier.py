@@ -1,5 +1,6 @@
 class Aircraft(object):
-    def __init__(self, max_ammo, base_damage):
+    def __init__(self, aircraft_type, max_ammo, base_damage):
+        self.aircraft_type = aircraft_type
         self.max_ammo = max_ammo
         self.base_damage = base_damage
         self.ammo_store = 0
@@ -20,22 +21,16 @@ class Aircraft(object):
         else:
             self.ammo_store += amount
         return 0
-
-
-            
-
+           
     def get_type(self):
-        pass
+        return self.aircraft_type
 
     def get_status(self):
-        pass
+        return ("Type: {}, Ammo: {}, Base Damage: {}, All Damage: {}.".format(self.aircraft_type, self.ammo_store, self.base_damage, self.base_damage*self.ammo_store))
 
         
 
 
 
-f_16 = Aircraft(8, 30)
-f_35 = Aircraft(12, 50)
-
-print(f_16.refill(50))
-print(f_16.ammo_store)
+f_16 = Aircraft("F-16", 8, 30)
+f_35 = Aircraft("F-35", 12, 50)
