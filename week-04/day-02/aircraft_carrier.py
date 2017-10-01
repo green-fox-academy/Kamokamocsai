@@ -34,3 +34,10 @@ class Aircraft(object):
 
 f_16 = Aircraft("F-16", 8, 30)
 f_35 = Aircraft("F-35", 12, 50)
+
+print(f_16.get_type())
+print(f_16.get_status())
+
+f_16.refill(30)
+print(f_16.get_type())
+print(f_16.get_status())
