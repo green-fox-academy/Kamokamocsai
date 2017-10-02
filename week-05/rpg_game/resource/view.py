@@ -13,11 +13,12 @@ canvas.pack()
 class App:
     def __init__(self):
         self.rect = None
+        self.hero_img = PhotoImage(file = "img/hero-down.png")
         self.floor = PhotoImage(file = "img/floor.png")
         self.draw_map()
 
     def hero(self, x, y, size):
-        self.rect = canvas.create_rectangle(x, y, x+size, y+size, fill = "black", width=0)
+        self.rect = canvas.create_image(x, y, image = self.hero_img, anchor= 'nw')
 
     def move(self, dx, dy):
         canvas.move(self.rect, dx, dy )
