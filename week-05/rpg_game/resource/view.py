@@ -1,5 +1,6 @@
 from tkinter import *
 from map_lvl import Map
+import random
 
 
 size = 720
@@ -7,7 +8,7 @@ size = 720
 root = Tk()
 root.configure(background ='black')
 root.title("Wanderer - RPG Game by Kamo")
-canvas = Canvas(root, width=size, height=size, bg="yellow", bd=0)
+canvas = Canvas(root, width=size + 100, height=size, bg="yellow", bd=0)
 canvas.pack()
 
 
@@ -53,12 +54,37 @@ class Hero(object):
             canvas.move(self.rect, dx*72, dy*72)
             
 
+class Entity(object):
+    
+    def __init__(self):
+        self.img = img
+        self.current_pos_x = current_pos_x
+        self.current_pos_y = current_pos_y
+
+    def move_entity(self):
+        pass
+
+
+class Skeleton(Entity):
+    def __init__(self):
+        self.img = PhotoImage(file = "img/skeleton.png")
+
+    def skeleton(self, x, y):
+        self.x_pos = x*72
+        self.y_pos = y*72
+        self.skeleton = canvas.create_image(x*72, y*72, image = self.img, anchor= 'nw')
+        
+            
+
 
 app = App()
 
 hero = Hero()
 
 hero.hero(0, 0)
+
+skeleton = Skeleton()
+skeleton.skeleton(random.randint(1, 9), random.randint(1, 9))
 
 def on_key_press(e):
     if ( e.keysym == 'Up' ):
