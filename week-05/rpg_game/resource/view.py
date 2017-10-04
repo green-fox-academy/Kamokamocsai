@@ -58,8 +58,6 @@ class Entity(object):
     
     def __init__(self):
         self.img = img
-        self.current_pos_x = current_pos_x
-        self.current_pos_y = current_pos_y
 
     def move_entity(self):
         pass
@@ -70,9 +68,15 @@ class Skeleton(Entity):
         self.img = PhotoImage(file = "img/skeleton.png")
 
     def skeleton(self, x, y):
-        self.x_pos = x*72
-        self.y_pos = y*72
-        self.skeleton = canvas.create_image(x*72, y*72, image = self.img, anchor= 'nw')
+        # self.x_pos = x*72
+        # self.y_pos = y*72
+        skeletons = 0
+        while skeletons <=5:
+            if app.map.can_move(x, y):
+                self.skeleton = canvas.create_image(x*72, y*72, image = self.img, anchor= 'nw')
+            x = random.randint(1, 9)
+            y = random.randint(1, 9)
+            skeletons += 1
         
             
 
@@ -85,6 +89,8 @@ hero.hero(0, 0)
 
 skeleton = Skeleton()
 skeleton.skeleton(random.randint(1, 9), random.randint(1, 9))
+
+
 
 def on_key_press(e):
     if ( e.keysym == 'Up' ):
