@@ -8,8 +8,9 @@ size = 720
 root = Tk()
 root.configure(background ='black')
 root.title("Wanderer - RPG Game by Kamo")
-canvas = Canvas(root, width=size + 100, height=size, bg="yellow", bd=0)
+canvas = Canvas(root, width=size + 200, height=size, bg="white", bd=0)
 canvas.pack()
+
 
 
 
@@ -18,9 +19,10 @@ class App:
         # self.rect = None
         self.floor = PhotoImage(file = "img/floor.png")
         self.wall = PhotoImage(file = "img/wall.png")
+        self.statusbar_img = PhotoImage(file = "img/old_scroll.png")
         self.map = Map()
         self.draw_map()
-
+        self.draw_statusbar()
 
     def draw_map(self):
         cell_size = size / 10
@@ -30,7 +32,13 @@ class App:
                     cell = canvas.create_image(column * cell_size + 2, row * cell_size + 2, image = self.floor, anchor = 'nw')
                 else:
                     canvas.create_image(column * cell_size + 2, row * cell_size + 2, image = self.wall, anchor = 'nw')
-                    
+
+    def draw_statusbar(self):
+        self.statusbar = canvas.create_image(size, 0, image = self.statusbar_img, anchor= 'nw')
+        self.menu_text = canvas.create_text(750, 50, fill="darkblue", font="Times 20 italic bold", anchor="nw",
+                        text="WANDERER\n -------------\nRPG Game\n      by\n    Kamo")
+
+
 
 class Hero(object):
     def __init__(self):
@@ -53,6 +61,9 @@ class Hero(object):
             self.current_pos_y += dy
             canvas.move(self.rect, dx*72, dy*72)
             
+    def attack(self, target):
+        pass
+
 
 class Entity(object):
     
