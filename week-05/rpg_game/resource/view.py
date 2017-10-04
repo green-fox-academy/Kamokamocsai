@@ -6,6 +6,7 @@ import random
 size = 720
 
 root = Tk()
+root.iconbitmap('r', 'img/sword_icon.ico')
 root.configure(background ='black')
 root.title("Wanderer - RPG Game by Kamo")
 canvas = Canvas(root, width=size + 200, height=size, bg="white", bd=0)
@@ -65,22 +66,24 @@ class Hero(object):
         pass
 
 
-class Entity(object):
-    
+class Entity(object):    
     def __init__(self):
         self.img = img
 
-    def move_entity(self):
-        pass
+#     def move_entity(self):
+#         if on_key_press('Up' or 'Down'):
+#             self.current_pos_x += dx
+#             self.current_pos_y += dy
+#             canvas.move(self.rect, dx*72, dy*72)
 
 
 class Skeleton(Entity):
     def __init__(self):
         self.img = PhotoImage(file = "img/skeleton.png")
+        self.x_pos = 0
+        self.y_pos = 0
 
     def skeleton(self, x, y):
-        # self.x_pos = x*72
-        # self.y_pos = y*72
         skeletons = 0
         while skeletons <=5:
             if app.map.can_move(x, y):
@@ -88,8 +91,12 @@ class Skeleton(Entity):
             x = random.randint(1, 9)
             y = random.randint(1, 9)
             skeletons += 1
+            x_pos = x
+            y_pos = y
         
-            
+    def move_skeleton(self):
+        if on_key_press(e) == 'Up':
+            self.canvas.move(self.skeleton, x_pos+1*72, y_pos+1*72)        
 
 
 app = App()
