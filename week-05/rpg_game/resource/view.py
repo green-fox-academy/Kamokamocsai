@@ -1,5 +1,5 @@
 from tkinter import *
-from map_lvl import map1
+from map_lvl import Map
 
 
 size = 720
@@ -14,50 +14,58 @@ canvas.pack()
 
 class App:
     def __init__(self):
-        self.rect = None
-        # self.hero_img = PhotoImage(file = "img/hero-down.png")
-        self.hero_down = PhotoImage(file = "img/hero-down.png")
-        self.hero_left = PhotoImage(file = "img/hero-left.png")
-        self.hero_right = PhotoImage(file = "img/hero-right.png")
-        self.hero_up = PhotoImage(file = "img/hero-up.png")
+        # self.rect = None
         self.floor = PhotoImage(file = "img/floor.png")
         self.wall = PhotoImage(file = "img/wall.png")
+        self.map = Map()
         self.draw_map()
 
-    def hero(self, x, y, hero_img):
-        self.rect = canvas.create_image(x, y, image = hero_img, anchor= 'nw')
-
-
-    def move(self, dx, dy):
-        
-        canvas.move(self.rect, dx, dy)
 
     def draw_map(self):
         cell_size = size / 10
-        for row in range(len(map1)):             
-            for column in range(len(map1)): 
-                if map1[row][column] == 1:
+        for row in range(len(self.map.map1)):
+            for column in range(len(self.map.map1)):
+                if self.map.map1[row][column] == 1:
                     cell = canvas.create_image(column * cell_size + 2, row * cell_size + 2, image = self.floor, anchor = 'nw')
-                    
                 else:
                     canvas.create_image(column * cell_size + 2, row * cell_size + 2, image = self.wall, anchor = 'nw')
                     
 
+class Hero(object):
+    def __init__(self):
+        self.hero_imgs = {
+            "Down": PhotoImage(file = "img/hero-down.png"),
+            "Left": PhotoImage(file = "img/hero-left.png"),
+            "Right": PhotoImage(file = "img/hero-right.png"),
+            "Up": PhotoImage(file = "img/hero-up.png")
+        }
+        self.current_pos = 0
+
+    def hero(self, x, y):
+        self.rect = canvas.create_image(x, y, image = self.hero_imgs["Down"], anchor= 'nw')
+
+    def move(self, dx, dy, direction):
+
+        # canvas.move(self.rect, self.current_pos += map1[x][y])
+        canvas.move(self.rect, dx, dy)
+        canvas.itemconfig(self.rect, image = self.hero_imgs[direction])
 
 
-myApp = App()
+working_app = App()
 
-myApp.hero(0, 0, myApp.hero_down)
+myApp = Hero()
+
+myApp.hero(0, 0)
 
 def on_key_press(e):
     if ( e.keysym == 'Up' ):
-        myApp.move(0,-72)
+        myApp.move(0,-1, e.keysym)
     elif( e.keysym == 'Down' ):
-        myApp.move(0,72)
+        myApp.move(0,1, e.keysym)
     elif( e.keysym == 'Left' ):
-        myApp.move(-72,0)
+        myApp.move(-1,0, e.keysym)
     elif( e.keysym == 'Right' ):
-        myApp.move(72,0)
+        myApp.move(1,0, e.keysym)
 
 
 # Tell the canvas that we prepared a function that can deal with the key press events
