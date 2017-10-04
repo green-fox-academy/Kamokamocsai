@@ -46,12 +46,11 @@ class Hero(object):
         self.rect = canvas.create_image(x, y, image = self.hero_imgs["Down"], anchor= 'nw')
 
     def move(self, dx, dy, direction):
-        # canvas.move(self.rect, self.current_pos += map1[x][y])
+        canvas.itemconfig(self.rect, image = self.hero_imgs[direction])
         if app.map.can_move(self.current_pos_x + dx, self.current_pos_y + dy):
             self.current_pos_x += dx
             self.current_pos_y += dy
             canvas.move(self.rect, dx*72, dy*72)
-            canvas.itemconfig(self.rect, image = self.hero_imgs[direction])
             
 
 
