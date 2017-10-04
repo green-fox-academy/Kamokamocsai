@@ -14,8 +14,14 @@ class Map():
         ]
 
     def can_move(self, x, y):
-        x = int(x/72)
-        y = int(y/72) 
-        return self.map1[y][x]
+        return self.map1[y][x] == 1
+        # if x or y > 0:
+        #     return True
+        # elif self.map1[y][x] == 1:
+        #     return True
+        # else:
+        #     return False
+            
+
 
 Map()

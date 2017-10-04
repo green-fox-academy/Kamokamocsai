@@ -39,33 +39,37 @@ class Hero(object):
             "Right": PhotoImage(file = "img/hero-right.png"),
             "Up": PhotoImage(file = "img/hero-up.png")
         }
-        self.current_pos = 0
+        self.current_pos_x = 0
+        self.current_pos_y = 0
 
     def hero(self, x, y):
         self.rect = canvas.create_image(x, y, image = self.hero_imgs["Down"], anchor= 'nw')
 
     def move(self, dx, dy, direction):
-
         # canvas.move(self.rect, self.current_pos += map1[x][y])
-        canvas.move(self.rect, dx, dy)
-        canvas.itemconfig(self.rect, image = self.hero_imgs[direction])
+        if app.map.can_move(self.current_pos_x + dx, self.current_pos_y + dy):
+            self.current_pos_x += dx
+            self.current_pos_y += dy
+            canvas.move(self.rect, dx*72, dy*72)
+            canvas.itemconfig(self.rect, image = self.hero_imgs[direction])
+            
 
 
-working_app = App()
+app = App()
 
-myApp = Hero()
+hero = Hero()
 
-myApp.hero(0, 0)
+hero.hero(0, 0)
 
 def on_key_press(e):
     if ( e.keysym == 'Up' ):
-        myApp.move(0,-1, e.keysym)
+        hero.move(0,-1, e.keysym)
     elif( e.keysym == 'Down' ):
-        myApp.move(0,1, e.keysym)
+        hero.move(0,1, e.keysym)
     elif( e.keysym == 'Left' ):
-        myApp.move(-1,0, e.keysym)
+        hero.move(-1,0, e.keysym)
     elif( e.keysym == 'Right' ):
-        myApp.move(1,0, e.keysym)
+        hero.move(1,0, e.keysym)
 
 
 # Tell the canvas that we prepared a function that can deal with the key press events
