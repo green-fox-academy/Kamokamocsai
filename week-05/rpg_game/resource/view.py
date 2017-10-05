@@ -71,7 +71,7 @@ class Skeleton(Entity):
         skeletons = 0
         while skeletons <=5:
             if app.map.can_move(x, y):
-                self.skeleton = canvas.create_image(x*72, y*72, image = self.img, anchor= 'nw')
+                self.skeleton = canvas.create_image(x*72+2, y*72+2, image = self.img, anchor= 'nw')
             x = random.randint(1, 9)
             y = random.randint(1, 9)
             skeletons += 1
@@ -92,7 +92,7 @@ class Boss(Entity):
 
     def han_solo(self, x, y):
         if app.map.can_move(x, y):
-            canvas.create_image(x*72, y*72, image = self.img, anchor= 'nw')
+            canvas.create_image(x*72+2, y*72+2, image = self.img, anchor= 'nw')
             x = random.randint(1, 9)
             y = random.randint(1, 9)
             x_pos = x
