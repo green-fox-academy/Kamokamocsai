@@ -18,9 +18,9 @@ canvas.pack()
 class App:
     def __init__(self):
         # self.rect = None
-        self.floor = PhotoImage(file = "img/floor.png")
-        self.wall = PhotoImage(file = "img/wall.png")
-        self.statusbar_img = PhotoImage(file = "img/old_scroll.png")
+        self.floor = PhotoImage(file = "img/sw-floor.png")
+        self.wall = PhotoImage(file = "img/sw-wall.png")
+        self.statusbar_img = PhotoImage(file = "img/space.png")
         self.map = Map()
         self.draw_map()
         self.draw_statusbar()
@@ -36,34 +36,18 @@ class App:
 
     def draw_statusbar(self):
         self.statusbar = canvas.create_image(size, 0, image = self.statusbar_img, anchor= 'nw')
-        self.menu_text = canvas.create_text(750, 50, fill="darkblue", font="Times 20 italic bold", anchor="nw",
+        self.menu_text = canvas.create_text(750, 50, fill="yellow", font="Times 20 italic bold", anchor="nw",
                         text="WANDERER\n -------------\nRPG Game\n      by\n    Kamo")
+        self.menu_text = canvas.create_text(750, 240, fill="yellow", font="Times 15 bold", anchor="nw",
+                        text="HP: "+str(Hero().current_hp))
+        self.menu_text = canvas.create_text(750, 260, fill="yellow", font="Times 15 bold", anchor="nw",
+                text="Defence: "+str(Hero().current_dp))
+        self.menu_text = canvas.create_text(750, 280, fill="yellow", font="Times 15 bold", anchor="nw",
+                text="Strike point: "+str(Hero().current_sp))
 
 
 
-class Hero(object):
-    def __init__(self):
-        self.hero_imgs = {
-            "Down": PhotoImage(file = "img/hero-down.png"),
-            "Left": PhotoImage(file = "img/hero-left.png"),
-            "Right": PhotoImage(file = "img/hero-right.png"),
-            "Up": PhotoImage(file = "img/hero-up.png")
-        }
-        self.current_pos_x = 0
-        self.current_pos_y = 0
 
-    def hero(self, x, y):
-        self.rect = canvas.create_image(x, y, image = self.hero_imgs["Down"], anchor= 'nw')
-
-    def move(self, dx, dy, direction):
-        canvas.itemconfig(self.rect, image = self.hero_imgs[direction])
-        if app.map.can_move(self.current_pos_x + dx, self.current_pos_y + dy):
-            self.current_pos_x += dx
-            self.current_pos_y += dy
-            canvas.move(self.rect, dx*72, dy*72)
-            
-    def attack(self, target):
-        pass
 
 
 class Entity(object):    
@@ -79,7 +63,7 @@ class Entity(object):
 
 class Skeleton(Entity):
     def __init__(self):
-        self.img = PhotoImage(file = "img/skeleton.png")
+        self.img = PhotoImage(file = "img/yoda-down.png")
         self.x_pos = 0
         self.y_pos = 0
 
@@ -96,18 +80,65 @@ class Skeleton(Entity):
         
     def move_skeleton(self):
         if on_key_press(e) == 'Up':
-            self.canvas.move(self.skeleton, x_pos+1*72, y_pos+1*72)        
+            self.canvas.move(self.skeleton, self.x_pos*72 +1, self.y_pos*72+1)  
 
+
+
+class Boss(Entity):
+    def __init__(self):
+        self.img = PhotoImage(file = "img/han_solo.png")
+        self.x_pos = 0
+        self.y_pos = 0
+
+    def han_solo(self, x, y):
+        if app.map.can_move(x, y):
+            canvas.create_image(x*72, y*72, image = self.img, anchor= 'nw')
+            x = random.randint(1, 9)
+            y = random.randint(1, 9)
+            x_pos = x
+            y_pos = y
+                            
+
+
+class Hero(object):
+    def __init__(self):
+        self.hero_imgs = {
+            "Down": PhotoImage(file = "img/stormtrooper-down.png"),
+            "Left": PhotoImage(file = "img/stormtrooper-left.png"),
+            "Right": PhotoImage(file = "img/stormtrooper-right.png"),
+            "Up": PhotoImage(file = "img/stormtrooper-up.png")
+        }
+        self.current_pos_x = 0
+        self.current_pos_y = 0
+        self.current_hp = 100
+        self.current_dp = 200
+        self.current_sp = 100
+
+    def hero(self, x, y):
+        self.rect = canvas.create_image(x, y, image = self.hero_imgs["Down"], anchor= 'nw')
+
+    def move(self, dx, dy, direction):
+        canvas.itemconfig(self.rect, image = self.hero_imgs[direction])
+        if app.map.can_move(self.current_pos_x + dx, self.current_pos_y + dy):
+            self.current_pos_x += dx
+            self.current_pos_y += dy
+            canvas.move(self.rect, dx*72, dy*72)
+            
+    def attack(self, target):
+        pass
 
 app = App()
 
-hero = Hero()
-
-hero.hero(0, 0)
 
 skeleton = Skeleton()
 skeleton.skeleton(random.randint(1, 9), random.randint(1, 9))
 
+boss1 = Boss()
+boss1.han_solo(random.randint(1,9), random.randint(1,9))
+
+hero = Hero()
+
+hero.hero(0, 0)
 
 
 def on_key_press(e):
