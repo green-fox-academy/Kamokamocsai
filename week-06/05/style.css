@@ -1,0 +1,20 @@
+.container {
+     display: flex;
+     width: 800px;
+     height: 400px;
+     flex-direction: column;
+     justify-content: center;
+}
+
+.yellow {
+    background-color: #FFD62A;
+    flex-grow: 1;
+}
+
+.purple {
+    background-color: #B02AFF;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    align-self: center;
+}
