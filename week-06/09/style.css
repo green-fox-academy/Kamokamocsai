@@ -1,11 +1,18 @@
 .box {
     display: flex;
-    border: solid black 4px;
+    border: solid black 5px;
     height: 600px;
     width: 800px;
     margin: 10px;
     justify-content: center;
     background-color: white;
-    border-radius: 15px;
+    border-radius: 20px;
     margin: auto;
+}
+
+.line {
+    margin-top: 30px;
+    border: solid black 2.5px;
+    width: 100%;
+    height: 0;
 }
