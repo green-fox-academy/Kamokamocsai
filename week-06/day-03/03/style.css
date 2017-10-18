@@ -20,17 +20,13 @@ table {
     text-decoration: none;
     outline: none;
     color: #fff;
-    background-color: #4CAF50;
     border: none;
     border-radius: 15px;
-    /* box-shadow: 0 5px #999; */
     margin: 15px;
 }
 
 .button:hover {
-    filter: brightness(85%);
-    
-    
+    filter: brightness(85%);    
 }
 
 .button:active {
