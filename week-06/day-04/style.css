@@ -1,0 +1,67 @@
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, minmax(150px, auto));
+    grid-auto-rows: minmax(150px, auto);
+    grid-gap: 10px;
+    /* align-items: center; */
+    /* justify-items: center; */
+    /* justify-content: start; */
+    /* Ha az itemeknek adok ilyet: grid-area: neve; akkor így lerajzolhatom. Ez itt most éppen 3 oszlopos. */
+    /* grid-template-areas:
+        "header header header"
+        "sidebar atricle1 article1"
+        "sidebar article2 article3"
+        "footer footer footer";  */
+    /* Ez pl nagyon jó:    "header header ." <-Ez a pont egy üres cellát hoz létre. */
+}
+
+div {
+    color: white;
+    font-size: 40px;
+}
+
+/* .container div:nth-child(odd) {
+    background-color: gray;
+} */
+
+.header {
+    background-color: blue;
+    grid-column: 1 / 9;
+}
+
+.sidebar {
+    background-color: purple;
+    grid-column: 1 / span 3;
+    grid-row: 2 / 8;
+}
+
+.article1 {
+    background-color: pink;
+    grid-column: 4 / 9;
+}
+
+.article2 {
+    background-color: green;
+    grid-column: 4 / 6;
+    grid-row: 3 / 6;
+}
+
+.article3 {
+    background-color: tomato;
+    grid-column: 6 / 9;
+    grid-row: 3 / 6;
+}
+
+.article4 {
+    background-color: yellow;
+    grid-column: 4 / 9;    
+    grid-row: 6 / 8;
+}
+
+.footer {
+    background-color: grey;
+    grid-column: 1 / 9;
+    grid-row: 
+}
