@@ -1,0 +1,78 @@
+body {
+    background: #eee;
+    border: 0px;
+    font-family: fantasy;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, minmax(100px, auto));
+    grid-auto-rows: 1fr;
+    background-color: black;
+    margin: 20px auto;
+}
+.middle {
+    grid-row: 2 / 6;
+    grid-column: 2 / 7;
+    background-color: #4ED317;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0px 0px 22px #000000;
+}
+
+
+.yellow {
+    background-color: #FED532;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 1px;
+}
+
+.start {
+    display: flex;
+    transform: rotate(-45deg);
+    font-size: 40px;
+}
+
+.pub {
+    display: flex;
+    transform: rotate(-45deg);
+    font-size: 40px;
+}
+
+.grid {
+    display: grid;
+    width: 100%;
+    height: 50%;
+    grid-template-columns: 45% 55%;
+    grid-row: 1fr;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-right: 20px;
+}
+
+.content {
+    display: flex;
+    font-size: 40px;
+    color: white;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cardbox {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #B02EFD;
+    color: white;
+    font-size: 40px;
+    justify-content: center;
+    align-items: center;
+    
+}
