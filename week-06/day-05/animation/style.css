@@ -1,0 +1,53 @@
+div {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+}
+
+.box {
+    transition: width 2s, height 2s, background-color 2s, transform 2s;
+}
+
+.box:hover {
+    background-color: #FFCCCC;
+    width: 200px;
+    height: 200px;
+    transform: rotate(180deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes animation1 {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+
+
+
+.box {
+    /* width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red; */
+    animation-name: animation1;
+    animation-delay: 2s;  /* anim waiting after loaded*/
+    animation-duration: 4s;
+    animation-iteration-count: 3; /* or infinite */
+    /* animation-direction: reverse; */ /* or alternate -> oda-vissza */
+    animation-timing-function: linear; /* ease, ease-in, ease-out, ease-in-out */
+}
