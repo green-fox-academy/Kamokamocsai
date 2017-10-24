@@ -13,6 +13,7 @@ body {
     background-color: black;
     margin: 20px auto;
 }
+
 .middle {
     grid-row: 2 / 6;
     grid-column: 2 / 7;
@@ -22,7 +23,6 @@ body {
     justify-content: center;
     box-shadow: inset 0px 0px 22px #000000;
 }
-
 
 .yellow {
     background-color: #FED532;
