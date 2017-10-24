@@ -27,13 +27,15 @@ for (let i = 1; i <= lineCount; i++) {
     if (i < middleNumber) {
         console.log(whiteSpace.repeat(spaceCounter) + "*".repeat(i * 2 - 1));
         spaceCounter -= 1;
-    } else if (i == middleNumber) {
+    } else if (i === middleNumber) {
         console.log(whiteSpace.repeat(spaceCounter) + "*".repeat(i * 2 - 1));
         spaceCounter +=1;
     } else if(i > middleNumber) {
-        console.log(whiteSpace.repeat(spaceCounter) + "*".repeat(i - afterSpace));
-        afterSpace += 1;
-        spaceCounter += 1;        
+        let remover = lineCount - 2;
+        console.log(whiteSpace.repeat(spaceCounter) + "*".repeat(remover));
+        remover--;
+        spaceCounter += 1;  
+        lineCount -= 2;      
     }
 
 }
