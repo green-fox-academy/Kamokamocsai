@@ -13,7 +13,7 @@ for (var i = 0; i < girls.length; i++) {
         } else if (j in order) {
             continue;
         } else {
-            order.push(girls[i] + ' - ' + boys[j]);
+            order.push(girls[i] + ', ' + boys[j]);
         }
     }
 }
