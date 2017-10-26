@@ -16,11 +16,12 @@
   </script>
   OR -->
   <script>
-      let lastParagraph = document.querySelector('.dog');
-      let allParagraphs = document.querySelectorAll('p')
-      for (let i = 0; i < allParagraphs.length; i++) {
-        allParagraphs[i].textContent = lastParagraph.textContent;
-      }
+    'use strict';
+    let lastParagraph = document.querySelector('.dog');
+    let allParagraphs = document.querySelectorAll('p')
+    for (let i = 0; i < allParagraphs.length; i++) {
+      allParagraphs[i].textContent = lastParagraph.textContent;
+    }
   </script>
   <!-- <script src="content-2.js"></script> -->
 </body>
