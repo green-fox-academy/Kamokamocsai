@@ -7,7 +7,17 @@ let images = [{
     'title': 'masodik kep',
     'description': 'sok-sok szoveg',
     'url': "https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/10325619_705557152917672_4269124930293393731_n.jpg?oh=36550dc35c38655bab9525c1f5d94216&oe=5A7F5A15"
-}
+},
+// {
+//     'title': 'legujabb kep',
+//     'description': 'okokokokok',
+//     'url': "https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/10523761_705556302917757_3946690819798907681_n.jpg?oh=5208701daf2aad4489afca3f136f8269&oe=5A6ADF31"
+// },
+// {
+//     'title': 'utolso kep',
+//     'description': 'blablabla',
+//     'url': "https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-9/12074771_644368269036561_4957046902188976204_n.jpg?oh=19ac6fce53c5331a0d82f8ad01ad7525&oe=5AAAC78B"
+// }
 ];
 
 
@@ -22,8 +32,17 @@ function renderThumbs(list) {
         newListElement.textContent = list[i]['title'];
         let imgSrc = list[i]['url'];
         newListElement.setAttribute('src', imgSrc);
-    } 
-    // thumbnail.appendChild
+    }
 }
 
+function renderImage (img) {
+    let container = document.querySelector('.bigpic');
+    let newBigPic = document.createElement('div');
+    container.appendChild(newBigPic);
+    // newBigPic.setAttribute('', '');
+}
+
+
 renderThumbs(images);
+
+renderImage();
