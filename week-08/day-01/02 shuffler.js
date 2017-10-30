@@ -1,8 +1,11 @@
+'use strict';
+
 const Panama = {
     cash: 0,
     name: 'Panama',
     tax: '1%',
     deposit: function(amt) {
+        this.cash += amt;        
     }
 }
 
@@ -11,6 +14,7 @@ const Cyprus = {
     name: 'Cyprus',
     tax: '5%',
     deposit: function(amt) {
+        this.cash += amt;
     }
 }
 
@@ -18,17 +22,15 @@ const Shuffler = {
     cash: 10000,
     transactionCount: 0,
     pick: function() {
+        let countryName = '';
         if (this.transactionCount % 2 === 0) {
-            let countryName = Panama.name;
-            console.log(countryName + " got 1000");
-            Panama.cash += 1000;
-            this.transactionCount = 1;
-        } else if (this.transactionCount % 2 !== 0) {
-            let countryName = Cyprus.name;
-            console.log(countryName + " got 1000");
-            Cyprus.cash += 1000;
-            this.transactionCount = 0;
+            countryName = Panama;
+        } else {
+            countryName = Cyprus;
         }
+        countryName.deposit(1000);            
+        console.log(countryName.name + " got 1000");
+        this.transactionCount += 1;
     }
 }
 
