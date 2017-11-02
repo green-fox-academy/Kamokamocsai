@@ -1,0 +1,76 @@
+.container {
+    margin: auto;
+    display: grid;
+    grid-auto-flow: column;
+    background-color: orange;
+    height: 40rem;
+    width: 55rem;
+    grid-template-areas: 
+        "left, elevator, elevator, elevator",
+        "left, elevator, elevator, elevator",
+        "left, elevator, elevator, elevator",
+
+}
+
+.left {
+    
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-bottom: 10%;
+    height: 80%;
+    width: 30%;
+    background-color: yellow;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+    height: 100px;
+    width: 200px;
+}
+
+.up {
+    background: radial-gradient(
+        rgb(138, 7, 7) 30%,
+        rgb(28, 175, 52)
+        );
+    height: 50%;
+    border-radius: 12px;
+}
+
+.up:hover {
+
+}
+
+.down {
+    background-color: violet;
+    height: 50%;
+    border-radius: 12px;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+    height: 100%;
+    width: 200px;
+    justify-content: flex-end;
+}
+
+.elevator {
+    margin-right: 10%;
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: 90%;
+}
+
+.floor {
+    height: 10%;
+    width: 100%;
+    border: 2px solid black;
+}
