@@ -10,11 +10,33 @@
 
     <script>
         'use strict';
+
         let httpRequest = new XMLHttpRequest();
         httpRequest.open('GET', 'http://api.giphy.com/v1/gifs/trending?api_key=v2ZzKGE4jlJb9EHpH0PPj16fwvIj5eDV&limit=16');
+        httpRequest.onreadystatechange = function() {
+            if (httpRequest.readyState === 4){
+                console.log('Received');
+                var data = httpRequest.responseText;
+                callback(JSON.parse(data));
+                
+            }
+        }
         httpRequest.send();
-        let data = httpRequest.responseText;
-        // JSON.parse(data);
+        console.log('Sended');
+        
+        function callback(parsedData) {
+            console.log(parsedData['data'][0]['url']);
+            parsedData.data.forEach (renderGif);
+
+        }
+
+        function renderGif(source) {
+            let temp = document.createElement('a');
+            temp.setAttribute('href', source.url);
+            temp.innerText = 'walami ';
+            document.body.appendChild(temp);
+        }
+
     </script>
 
 </body>
