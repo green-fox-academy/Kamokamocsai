@@ -9,10 +9,10 @@
 <body>
     <script>
         
-    let httpRequest = new XMLHttpRequest();
-    var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json"; 
-    httpRequest.open('GET', url + '?api-key=0e5bfc72b8b848ad90dfbb66c8756142&q=apollo 11 landing');
-    httpRequest.onreadystatechange = function() {
+        let httpRequest = new XMLHttpRequest();
+        var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json"; 
+        httpRequest.open('GET', url + '?api-key=0e5bfc72b8b848ad90dfbb66c8756142&q=apollo 11 landing');
+        httpRequest.onreadystatechange = function() {
             if (httpRequest.readyState === 4){
                 console.log('Data received');
                 var data = httpRequest.responseText;
@@ -24,29 +24,36 @@
         console.log('Request sended');
         
         function callback(parsedData) {
-            // console.log(parsedData);
+            console.log(parsedData);
             let myParsedArray = parsedData.response.docs.map(getStory);
             tableCreator(myParsedArray);
 
         }
 
         function getStory(source) {
-            // console.log(source);
+            console.log(source);
             return {"header": source.headline.print_headline,
                     "snippet": source.snippet,
-                    "publication date": source.pub_date };
+                    "publication date": source.pub_date,
+                    "webUrl": source.web_url,
+                 };
             
         }
         
         function tableCreator(array){
             let table = document.createElement ('ul');
             array.forEach(function(element) {
+                let url = element['webUrl'];
                 let newRow = document.createElement('li');
                 table.appendChild(newRow);
                 let header = document.createElement('ul');
                 let snippet = document.createElement('ul');
                 let pubDate = document.createElement('ul');
-                header.textContent = element['header'];
+                let permalink = document.createElement('a');
+                permalink.textContent = element['header'];
+                permalink.setAttribute('href', element['webUrl']);
+                header.appendChild(permalink);
+                // header.textContent = element['header'];
                 snippet.textContent = element['snippet'];
                 pubDate.textContent = element['publication date'];
                 newRow.appendChild(header);
@@ -54,10 +61,6 @@
                 newRow.appendChild(pubDate);
             });
             document.body.appendChild(table);
-        }
-
-        function createRow (element){
-
         }
 
     </script>

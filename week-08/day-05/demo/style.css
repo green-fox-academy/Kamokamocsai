@@ -1,0 +1,32 @@
+* {
+    font-size: 105%;
+}
+
+li {
+    border: 1px dotted black;
+}
+
+li:hover img {
+    display: block;
+    position: absolute;
+}
+
+#search {
+    width: 30%;
+}
+
+img {
+    display: none;
+}
+
+a:hover {
+    color: yellow;
+}
+
+a:active {
+    color: green;
+}
+
+a:visited {
+    color: red;
+}

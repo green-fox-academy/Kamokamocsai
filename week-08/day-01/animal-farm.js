@@ -20,19 +20,35 @@ function Farm(slots) {
     this.freePlaces = slots;
     console.log(this.freePlaces);
     this.listOfAnimals = [];
+    let breedGoat = document.querySelector('.goat');
+    breedGoat.addEventListener('click', breedAnimal('goat'));
     this.breed = function(animal) {
         var animal = new Animal(animal);
         if (this.freePlaces > 0) {
             this.listOfAnimals.push(animal.animalName);
             this.freePlaces -= 1;
+            getListOfAnimals(this.listOfAnimals);
         } else {
             alert('No more free places!');
+        }
+    }
+
+    function breedAnimal (animal) {
+        var animal = new Animal(animal);
+        if (this.freePlaces > 0) {
+            this.listOfAnimals.push(animal.animalName);
+            this.freePlaces -= 1;
+            getListOfAnimals(this.listOfAnimals);
+        } else {
+        alert('No more free places!');
         }
     }
 }
 
 function getLittleFarm() {
     var littleFarm = new Farm(5);
+    // let breedGoat = document.querySelector('.goat');
+    // breedGoat.addEventListener('click', littleFarm.breed('goat'));
 }
 
 function getMiddleFarm() {
@@ -59,19 +75,11 @@ bigFarmButton.addEventListener('click', disableButton);
 
 
 function disableButton(){
-    let smallButtAttr = smallFarmButton.setAttribute('disabled', 'true');
-    console.log(smallButtAttr);
-    if (smallFarmButton.getAttribute('disabled', 'true')){
-        smallFarmButton.setAttribute('disabled', 'false');
-    }else{
-        smallFarmButton.setAttribute('disabled', 'true');
-    }
+    smallFarmButton.setAttribute('disabled', 'true');
+    middleFarmButton.setAttribute('disabled', 'true');
+    bigFarmButton.setAttribute('disabled', 'true');
 }
 
-console.log(smallFarmButton.getAttribute('disabled'));
-
-let breedGoat = document.querySelector('.goat');
-// breedGoat.addEventListener('click', getLittleFarm.breed('goat'));
 // console.log(getLittleFarm.bind);
 
 // littleFarm.breed('goat');
@@ -83,3 +91,13 @@ let breedGoat = document.querySelector('.goat');
 
 
 console.log(Farm.listOfAnimals);
+
+function getListOfAnimals(listOfAnimals){
+    let animalsList = document.querySelector('.list');
+    animalsList.textContent = listOfAnimals;
+}
+
+
+function getStatus(){
+
+}
