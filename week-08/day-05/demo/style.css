@@ -1,5 +1,5 @@
 * {
-    font-size: 105%;
+    font-size: 103%;
 }
 
 li {
@@ -11,12 +11,12 @@ li:hover img {
     position: absolute;
 }
 
-#search {
-    width: 30%;
-}
-
 img {
     display: none;
+}
+
+#search {
+    width: 30%;
 }
 
 a:hover {
@@ -28,5 +28,9 @@ a:active {
 }
 
 a:visited {
+    color: red;
+}
+
+button:hover {
     color: red;
 }

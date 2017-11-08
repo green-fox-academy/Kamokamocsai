@@ -11,9 +11,10 @@ handle = function handle (id, info, where, data) {
     if(data) {
         console.log(where +" "+ info);
         console.log(data);
-    }
-    $(id).append("<li>" + info + (data ? " - check the console for the response " : "")+"</li>");
-}
+    } else {
+        $(id).append("<li>" + info + (data ? " - check the console for the response " : "")+"</li>");
+    };
+};
 $("#doubling").on("click", function () {
     $.get(window.baseUrl + "/doubling", {}).done(function (data) {
        if("error" in data && data["error"] == "Please provide an input!") {

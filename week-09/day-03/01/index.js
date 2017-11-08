@@ -24,6 +24,19 @@ app.get('/doubling', function(request, response){
     }
 });
 
+app.get('/greeter', function(request, response){
+    if(request.query.name == "" || request.query.title == ""){
+        response.json({
+            "error": "Please provide a name!"
+        })
+    
+    } else {
+        response.json({
+            "welcome_message": "Oh, hi there " + request.query.name + ", my dear " + request.query.title
+        });
+    };
+});
+
 // app.get('/hello', function(request, response){
 //     counter++;
 //     response.json({hello: counter});

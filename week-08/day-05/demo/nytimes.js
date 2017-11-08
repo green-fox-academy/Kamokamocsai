@@ -1,12 +1,12 @@
 'use strict';
 
 let allDiv = document.getElementsByClassName('container');
-var button = document.getElementById('submit');
-var input = document.getElementById('search');
+let button = document.getElementById('submit');
+let input = document.getElementById('search');
 
 button.addEventListener("click", click);
 input.addEventListener("keypress", function(e) {
-    var key = e.which || e.keyCode;
+    var key = e.keyCode;
     if (key === 13) { // 13 is enter
       click();
     }
@@ -20,24 +20,21 @@ function getData(searchWord){
         if (httpRequest.readyState === 4){
             console.log('Data received');
             var data = httpRequest.responseText;
-            callback(JSON.parse(data));
-            
+            callback(JSON.parse(data)); 
         }
     }
     httpRequest.send();
     console.log('Request sended');
-
 }
 
 function callback(parsedData) {
-    console.log(parsedData);
+    // console.log(parsedData);
     let myParsedArray = parsedData.response.docs.map(getStory);
     tableCreator(myParsedArray);
-
 }
 
 function getStory(source) {
-    console.log(source.multimedia);
+    // console.log(source.multimedia);
     return {"header": source.headline.print_headline,
             "snippet": source.snippet,
             "publication date": source.pub_date,
@@ -49,7 +46,7 @@ function getStory(source) {
 function tableCreator(array){
     let table = document.createElement ('ul');
     array.forEach(function(element) {
-        console.log(element.picture);
+        // console.log(element.picture);
         let newRow = document.createElement('li');
         table.appendChild(newRow);
         let header = document.createElement('ul');
@@ -63,14 +60,13 @@ function tableCreator(array){
         linkImage.setAttribute('src', 'http://www.nytimes.com/' + element['picture']);
         header.appendChild(permalink);
         header.appendChild(linkImage);
-        // header.textContent = element['header'];
         snippet.textContent = element['snippet'];
         pubDate.textContent = element['publication date'];
         newRow.appendChild(header);
         newRow.appendChild(snippet);
         newRow.appendChild(pubDate);
     });
-    console.log(allDiv);
+    // console.log(allDiv);
     allDiv[0].appendChild(table);
     
 
@@ -78,7 +74,6 @@ function tableCreator(array){
 
 function click() {
     console.log("click event");
-    console.log(allDiv);
     allDiv[0].innerHTML = "";
     var searchWord = document.getElementById('search').value;
     if (searchWord !== "") {

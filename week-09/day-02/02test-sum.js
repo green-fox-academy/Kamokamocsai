@@ -8,4 +8,4 @@ test('something ', function(t){
     let summing = new summer();
     t.equal(summing.sumNumbers(list1), 6);
     t.end();
-})
+});
