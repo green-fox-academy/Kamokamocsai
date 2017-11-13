@@ -1,0 +1,24 @@
+{
+  "name": "reddit",
+  "version": "1.0.0",
+  "description": "Reddit frontend and backend",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Kamokamocsai"
+  },
+  "keywords": [
+    "kamo"
+  ],
+  "author": "Kamo",
+  "license": "ISC"
+}
