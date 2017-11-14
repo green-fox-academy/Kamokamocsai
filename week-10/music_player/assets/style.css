@@ -1,0 +1,77 @@
+container {
+    margin: auto;
+    margin-top: 50px;
+    padding-top: 10px;
+    width: 80%;
+    height: 500px;
+    display: grid;
+    grid-template-rows: 1fr 80px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:"left right"
+                        "footer footer";
+    border: 3px solid grey;
+    box-shadow: 5px 5px black;
+    border-radius: 12px;
+    background-color: #F5F5F5;
+}
+ 
+.left {
+    grid-area: left;
+    display: grid;
+    grid-template-rows: 90px 30px 1fr;
+    grid-template-columns: 1fr 120px;
+    grid-template-areas:"logo album"
+                        "add album"
+                        "playlist playlist";
+    background-color: #F5F5F5;
+}
+ 
+.logo {
+    grid-area: logo;
+    background-image: url(../img/foxplayer.png);
+    background-repeat: no-repeat;
+}
+ 
+.add {
+    grid-area: add;
+    background-color: #fff;
+    padding: 10px;
+}
+ 
+.album_pic {
+    grid-area: album;
+}
+ 
+.playlist {
+    grid-area: playlist;
+}
+ 
+.right {
+    grid-area: right;
+    background-color:#F5F5F5;
+}
+ 
+footer {
+    border-radius: 12px;
+    grid-area: footer;
+    background-color: #eeeeee;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+}
+ 
+audio {
+    width: 100%;
+    align-self: center;
+    background-color: #F5F5F5;
+}
+
+li {
+    padding: 15px;
+    list-style: none;
+}
+
+li:nth-child(even) {
+    background-color: #fff;
+}

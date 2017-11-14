@@ -33,16 +33,15 @@ function createHtml (url, title, timestamp, user) {
     if (username === null) {
         username = 'anonymous'
     };
-    // post.createElement('a');
     
     post.innerHTML = `<div class="voter">
                         <img src="assets/upvote.png" id="upvote"/>
-                        <span class="counter">`+ counter +`</span>
+                        <span class="counter">${counter}</span>
                         <img src="assets/downvote.png"/>
                      </div>
                      <div class="post-content">
-                       <a href="` + url + `">` + title +`</a>
-                       <p>submitted ` + timestamp + ` mins ago by ` + username + ` </p>
+                       <a href="${url}">${title}</a>
+                       <p>submitted ${timestamp} mins ago by ${username} </p>
                        <a class="options" href="">Modify</a>
                        <a class="options" href="">Remove</a></div>`;
 
