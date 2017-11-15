@@ -11,7 +11,9 @@
    <container>
        <section class="left">
            <div class="logo"></div>
-           <div class="add">PLAYLISTS</div>
+           <div class="add">PLAYLISTS
+                <a class="new-playlist"><b>+</b></a>
+           </div>
            <div class="album_pic"></div>
            <div class="playlist">
                 <ul>
@@ -21,14 +23,28 @@
            </div>
        </section>
        <section class="right">
+           <span>Title:____ Author:__</span>
            <ul>
+               <li>eee</li>
+               <li>aaaa</li>
+               <li></li>
+               <li></li>
+               <li></li>
+               <li></li>
                
            </ul>
 
        </section>
        <footer class="tracker-line">
-           <audio controls src=".\music\02-crucified.wav"></audio>
+                <audio controls src=".\music\02-crucified.wav"></audio>
        </footer>
+
+       <div class="playlist-form">
+            <label><b>Create New Playlist</b></label><br>
+            <input  type="text" placeholder="Playlist name" name="newPlaylist" required>
+            <button class="create">Create</button>
+            <button class="cancel">Cancel</button>
+        </div>
    </container>
 
    <script src="./assets/music_player.js"></script>
