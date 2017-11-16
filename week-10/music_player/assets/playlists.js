@@ -16,6 +16,8 @@ let playListData = (data) => {
     highLight();
 };
 
+
+
 let highLight = () => {
     let liElements = playTrack.querySelectorAll('li');
     liElements.forEach(function(e){
@@ -26,18 +28,6 @@ let highLight = () => {
     });
 };
 
-// let create = () => {
-//     let addPlayList = document.querySelector('.add');
-//     let body = document.querySelector('body');
-//     addPlayList.addEventListener('click' , function() {
-//         let inputElement = document.createElement('input');
-//         inputElement.classList.add('user-input');
-//         body.appendChild(inputElement);
-//     });
+// let postNewPlaylist = function() {
+//     ajax('POST', data, '/playlists', playListData);
 // };
-
-let postList = function() {
-    ajax('POST', {'szia': 'hali'}, '/trackinfo', console.log);
-};
-
-// create();

@@ -11,8 +11,14 @@ let newPlaylistCreator = function () {
     });
     createButton.addEventListener('click', function () {
         var data = input.value;
+        console.log(data);
         playlistForm.style.display = 'none';
-        // postNewPlaylist(displayPlaylists, data)
+        if(data != ""){
+            let jsonData = {"id": 5, "title": data, "system": 0};
+            console.log(jsonData);
+            ajax('POST', jsonData, '/playlists', console.log);
+        };
+        
     });
     cancelButton.addEventListener('click', function () {
         playlistForm.style.display = 'none';
