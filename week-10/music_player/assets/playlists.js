@@ -3,6 +3,7 @@
 let playTrack = document.querySelector('.playlist');
 
 let listPlayLists = function(){
+    playTrack.innerHTML = null;
     ajax('GET', '', '/playlists', playListData);
 };
 

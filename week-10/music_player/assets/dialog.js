@@ -16,7 +16,7 @@ let newPlaylistCreator = function () {
         if(data != ""){
             let jsonData = {"id": 5, "title": data, "system": 0};
             console.log(jsonData);
-            ajax('POST', jsonData, '/playlists', console.log);
+            ajax('POST', jsonData, '/playlists', listPlayLists);
         };
         
     });
@@ -24,5 +24,9 @@ let newPlaylistCreator = function () {
         playlistForm.style.display = 'none';
     });
 };
+
+// let getPlaylists = function () {
+//     ajax('GET', )
+// };
 
 newPlaylistCreator();
