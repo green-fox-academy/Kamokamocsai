@@ -4,7 +4,7 @@ const mysql = require('mysql');
 
 const connection = mysql.createConnection({
     user: 'root',
-    password: 'gameskami',
+    password: 'root',
     database: 'music_player',
     host: 'localhost'
 });

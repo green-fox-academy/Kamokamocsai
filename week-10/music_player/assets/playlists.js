@@ -1,13 +1,39 @@
 'use strict';
 
+let dataFromPlaylists = document.querySelector('.playlist');
 let playTrack = document.querySelector('.playlist');
 
 let listPlayLists = function(){
-    playTrack.innerHTML = null;
+    dataFromPlaylists.innerHTML = null;
     ajax('GET', '', '/playlists', playListData);
 };
 
 let playListData = (data) => {
+    console.log(data);
+    data.forEach(function(e) {
+        let play = document.createElement('li');
+        dataFromPlaylists.appendChild(play);
+        play.textContent = e.title;
+    });
+    highLight();
+};
+
+let highLight = () => {
+    let liElements = dataFromPlaylists.querySelectorAll('li');
+    liElements.forEach(function(e){
+        e.addEventListener('click', function() {
+            liElements.forEach(e => e.classList.remove('active'));
+            e.classList.add('active');
+        });
+    });
+};
+
+let listTrackLists = function(){
+    playTrack.innerHTML = null;
+    ajax('GET', '', '/playlists', trackListData);
+};
+
+let trackListData = (data) => {
     console.log(data);
     data.forEach(function(e) {
         let play = document.createElement('li');
@@ -16,8 +42,6 @@ let playListData = (data) => {
     });
     highLight();
 };
-
-
 
 let highLight = () => {
     let liElements = playTrack.querySelectorAll('li');
@@ -28,7 +52,3 @@ let highLight = () => {
         });
     });
 };
-
-// let postNewPlaylist = function() {
-//     ajax('POST', data, '/playlists', playListData);
-// };

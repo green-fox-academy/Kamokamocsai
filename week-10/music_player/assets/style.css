@@ -110,6 +110,10 @@ container {
 .star:hover {
     fill: #000;
 }
+
+.track-list {
+    padding-top: 15px;
+}
  
 footer {
     border-radius: 12px;

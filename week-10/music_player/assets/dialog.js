@@ -18,15 +18,10 @@ let newPlaylistCreator = function () {
             console.log(jsonData);
             ajax('POST', jsonData, '/playlists', listPlayLists);
         };
-        
     });
     cancelButton.addEventListener('click', function () {
         playlistForm.style.display = 'none';
     });
 };
-
-// let getPlaylists = function () {
-//     ajax('GET', )
-// };
 
 newPlaylistCreator();

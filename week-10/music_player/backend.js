@@ -51,8 +51,12 @@ app.get('/trackinfo', function(request, response) {
 });
 
 app.post('/trackinfo', function(request, response) {
-    console.log(request.body);
+    trackList.push(req.body);    
     response.json({'status': 'done'});
 });
+
+// let selector = function (){
+    
+// }
 
 app.listen(3000, () => console.log('Server is running...'));
