@@ -1,0 +1,77 @@
+table {
+    margin: auto;
+    margin-top: 20px;
+    border: 1px solid black;
+    width: 80%;
+    box-shadow: 2px 2px 5px 5px grey;
+}
+
+tr {
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;    
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    cursor: pointer;
+    color: red;
+}
+
+#titleField {
+    /* display: flex;     */
+}
+
+/* #closefield {
+    display: flex;
+} */
+
+#close {
+    /* position: relative; */
+    color: white;
+    left: 90%;
+}
+
+button {
+    border-radius: 15px;
+    background-color: rgb(145, 105, 255);
+    color: white;
+    border-right-color: darkgrey;
+    border-bottom-color: darkgrey;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: white;
+    height: 30px;
+    width: 99%;
+    border: 1px solid black;
+}
+
+.solution {
+    padding-top: 20px;
+}
+
+.newrecords {
+    position: fixed;
+    display: none;
+    padding-top: 40px;
+    top: 30px;
+    left: 30%;
+}
+
+.newrecordtable {
+    background-color: white;
+}

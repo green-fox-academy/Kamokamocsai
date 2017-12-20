@@ -42,13 +42,3 @@ let trackListData = (data) => {
     });
     highLight();
 };
-
-let highLight = () => {
-    let liElements = playTrack.querySelectorAll('li');
-    liElements.forEach(function(e){
-        e.addEventListener('click', function() {
-            liElements.forEach(e => e.classList.remove('active'));
-            e.classList.add('active');
-        });
-    });
-};

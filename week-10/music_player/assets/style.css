@@ -39,7 +39,6 @@ container {
     grid-area: add;
     background-color: #fff;
     padding: 10px;
-    text-decoration
 }
  
 .album_pic {
@@ -55,7 +54,7 @@ container {
     overflow-x: hidden;
 }
 
-.scrollbar
+/* .scrollbar
 {
 	margin-left: 30px;
 	float: left;
@@ -63,7 +62,7 @@ container {
 	width: 65px;
 	background: #F5F5F5;
 	margin-bottom: 25px;
-}
+} */
 
 .force-overflow
 {
