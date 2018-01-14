@@ -22,6 +22,10 @@
    -  Understanding how "this" works in general
    -  Proper use of callbacks
    
+   [Prototype JS](https://github.com/greenfox-academy/Kamokamocsai/blob/master/week-10/day-01/02.js)
+
+   [REACT Project Frontend](https://github.com/greenfox-academy/huli-review-helper/blob/develop/src/app/App.js)
+   
    [Wanderer game](https://github.com/greenfox-academy/Kamokamocsai/blob/master/week-05/rpg_game/resource/view.py)
 
 ## Client - Server communication
