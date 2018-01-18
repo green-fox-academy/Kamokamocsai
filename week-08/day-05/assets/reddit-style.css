@@ -42,8 +42,7 @@ h1 {
 .side {
     position: fixed;
     padding-top: 10px;
-    padding-left: 70%;
-    /* padding-right: 10%; */
+    right: 10%;
 }
 
 main {
