@@ -16,7 +16,7 @@ function post(data) {
     xhr.onload = function() {
         window.location.href = '/'     //redirects back to main page
     };
-    xhr.send(JSON.stringify(data));   //string need to be sent to server, so first the objects shoulb be converted into string
+    xhr.send(JSON.stringify(data));   //string need to be sent to server, so first the objects should be converted into string
 };
 
 submitButton.addEventListener('click', function() {
