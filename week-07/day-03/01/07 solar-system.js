@@ -9,3 +9,5 @@ var halfOfList = planetList.splice(5, 7);
 planetList.push('Saturn,');
 planetList += halfOfList;
 console.log(planetList);
+
+// planetList.splice(5, 0, 'Saturn');
